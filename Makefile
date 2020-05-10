@@ -7,13 +7,13 @@ OBJ_DIR := ./build
 all: $(BIN_DIR)/geometry
 
 $(BIN_DIR)/geometry:  $(OBJ_DIR)/main.o  $(OBJ_DIR)/input_handle.o
-	gcc -Wall -Wextra -c $(OBJ_DIR)/main.o  $(OBJ_DIR)/input_handle.o -o $(BIN_DIR)/geometry -lm $(FLAGS)
+	g++ -Wall -Wextra $(OBJ_DIR)/main.o  $(OBJ_DIR)/input_handle.o -o $(BIN_DIR)/geometry -lm $(FLAGS)
 
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
-	gcc -Wall -Wextra -c  $(SRC_DIR)/main.cpp -o  $(OBJ_DIR)/main.o $(FLAGS)
+	g++ -Wall -Wextra $(SRC_DIR)/main.cpp -o  $(OBJ_DIR)/main.o $(FLAGS)
 
 $(OBJ_DIR)/input_handle.o: $(SRC_DIR)/input_handle.cpp
-		gcc -Wall -Wextra -c  $(SRC_DIR)/input_handle.cpp -o  $(OBJ_DIR)/input_handle.o -lm $(FLAGS)
+		g++ -Wall -Wextra  $(SRC_DIR)/input_handle.cpp -o  $(OBJ_DIR)/input_handle.o -lm $(FLAGS)
 
 
 clean:

@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <limits>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -64,9 +65,9 @@ int pb3 = 7;
 }
 
 
-string check(char** mass, int string0){
+char * check(char** mass, int string0){
 int pb = 0;
-    string f;
+    char * f;
     while (mass[string0][pb] != '(') {
         f+= mass[string0][pb];
         pb++;
